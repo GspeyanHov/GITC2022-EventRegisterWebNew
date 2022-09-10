@@ -16,8 +16,8 @@ import java.text.SimpleDateFormat;
 @WebServlet(urlPatterns = "/events/add")
 public class AddEventServlet extends HttpServlet {
 
-    private EventManager eventManager = new EventManager();
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    private final EventManager eventManager = new EventManager();
+    private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class AddEventServlet extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("name");
         String place = req.getParameter("place");
         boolean isOnline = Boolean.valueOf(req.getParameter("isOnline"));

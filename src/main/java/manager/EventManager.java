@@ -12,8 +12,8 @@ import java.util.List;
 
 public class EventManager {
 
-    private Connection connection = DBConnectionProvider.getInstance().getConnection();
-    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private final Connection connection = DBConnectionProvider.getInstance().getConnection();
+    private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public void add(Event event) {
         String sql = "insert into event(name, place, is_Online, event_type, price,event_date) VALUES(?,?,?,?,?,?)";

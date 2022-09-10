@@ -12,7 +12,7 @@ import java.util.List;
 @WebServlet(urlPatterns = "/users")
 public class UserServlet extends HttpServlet {
 
-    private UserManager userManager = new UserManager();
+    private final UserManager userManager = new UserManager();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,10 +20,4 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("users",all);
         request.getRequestDispatcher("/WEB-INF/users.jsp").forward(request,response);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
 }

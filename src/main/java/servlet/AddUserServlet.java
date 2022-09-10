@@ -14,8 +14,8 @@ import java.util.List;
 @WebServlet(urlPatterns = "/users/add")
 public class AddUserServlet extends HttpServlet {
 
-    private EventManager eventManager = new EventManager();
-    private UserManager userManager = new UserManager();
+    private final EventManager eventManager = new EventManager();
+    private final UserManager userManager = new UserManager();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

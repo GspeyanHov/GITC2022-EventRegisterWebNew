@@ -14,7 +14,7 @@ import java.util.List;
 @WebServlet(urlPatterns = "/events")
 public class EventServlet extends HttpServlet {
 
-     private EventManager eventManager = new EventManager();
+     private final EventManager eventManager = new EventManager();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

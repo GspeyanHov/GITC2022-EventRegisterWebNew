@@ -4,7 +4,6 @@ import manager.EventManager;
 import model.Event;
 import model.EventType;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.List;
+
 
 @WebServlet(urlPatterns = "/events/edit")
 public class EditEventServlet extends HttpServlet {
@@ -31,7 +30,7 @@ public class EditEventServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int eventId = Integer.parseInt(request.getParameter("eventId"));
         String name = request.getParameter("name");
         String place = request.getParameter("place");

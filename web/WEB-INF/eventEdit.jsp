@@ -1,8 +1,5 @@
 <%@ page import="model.Event" %>
-<%@ page import="java.util.List" %>
-<%@ page import="model.User" %>
-<%@ page import="model.EventType" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: SmartS
   Date: 02.09.2022
@@ -36,12 +33,9 @@ Please update event's data
     </select>
     price
     <input type="number" name="price" value="<%=event.getPrice()%>"> <br>
-    <%if (event.getEventDate() != null) {%>
     <input onfocus="(this.type = 'date')" type="text" name="eventDate" placeholder="<%=event.getEventDate()%> "
            size="25%">
-    <%} else {%>
-    <span style="color: green">No event date selected</span>
-    <%}%>
+
     <input type="submit" value="update">
 
 

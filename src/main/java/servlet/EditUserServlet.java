@@ -25,7 +25,7 @@ public class EditUserServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
