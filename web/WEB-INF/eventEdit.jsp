@@ -30,7 +30,6 @@ Please update event's data
     NO <input type="radio" name="isOnline" value="<%=event.isOnline()%> FALSE"> <br>
     Event type <br>
     <select name="eventType">
-        <option selected value="<%=event.getEventType().toString()%>"></option>
         <option value="FILM">FILM</option>
         <option value="GAME">GAME</option>
         <option value="SPORT">SPORT</option>
