@@ -17,6 +17,7 @@
 %>
 <table border="1">
     <tr>
+        <th>image</th>
         <th>id</th>
         <th>name</th>
         <th>surname</th>
@@ -28,6 +29,14 @@
     <%
         for (User user : users) { %>
     <tr>
+        <td><%
+            if (user.getProfilePic() == null || user.getProfilePic().length() == 0) {
+        %>
+            <img src="/image/Screenshot_6.png" width="100"/>
+            <%} else {%>
+            <img src="/getImage?profilePic=<%=user.getProfilePic()%>" width="100"/>
+            <%}%>
+        </td>
         <td><%=user.getId()%>
         </td>
         <td><%=user.getName()%>

@@ -33,7 +33,7 @@ Please update event's data
     </select>
     price
     <input type="number" name="price" value="<%=event.getPrice()%>"> <br>
-    <input onfocus="(this.type = 'date')" type="text" name="eventDate" placeholder="<%=event.getEventDate()%> "
+    <input onfocus="(this.type = 'date')" type="text" name="eventDate" value="<%=event.getEventDate()%> "
            size="25%">
 
     <input type="submit" value="update">

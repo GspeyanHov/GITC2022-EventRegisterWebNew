@@ -12,23 +12,35 @@
     <title>Add User</title>
 </head>
 <body>
-
 <%
-    List<Event> events = (List<Event>) request.getAttribute("events");
+    String msg = (String) request.getAttribute("msg");
 %>
+<%
+    if(msg != null) {
+%>
+<p style="color: red"><%=msg%>
+</p>
+<%}%>
 Please input user's data
-<form action="/users/add" method="post">
-    <input type="text" name="name" placeholder="please input name"> <br>
-    <input type="text" name="surname" placeholder="please input surname"><br>
-    <input type="email" name="email" placeholder="please input email"> <br>
-    <SELECT name="eventId">
-            <%for (Event event : events) {%>
-        <option value="<%=event.getId()%>"><%=event.getName()%> <%=event.getPlace()%> (<%=event.getPrice()%>)</option>
+<form action="/users/add" method="post" enctype="multipart/form-data">
 
-
-            <%}%>
-
-        <input type="submit" value="register">
+    <input type="text" name="name" placeholder="please input name"/> <br>
+    <input type="text" name="surname" placeholder="please input surname"/><br>
+    <input type="email" name="email" placeholder="please input email"/> <br>
+    <input type="password" name="password" placeholder="please input password"/> <br>
+    <select name="user_role">
+        <option value="ADMIN">Admin</option>
+        <option value="USER">User</option>
+    </select>
+    <%--    <select name="eventId">--%>
+    <%--            <%for (Event event : events) {%>--%>
+    <%--        <option value="<%=event.getId()%>"><%=event.getName()%> <%=event.getPlace()%> (<%=event.getPrice()%>)</option>--%>
+    <%--                    <%}%>--%>
+    <%--    </select>--%>
+    <br>
+    Profile picture:
+    <input type="file" name="profilePic">
+    <input type="submit" value="register">
 
 </form>
 </body>
